@@ -1,0 +1,21 @@
+server:
+  port: 9094
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sumitwithgit/Microservices-using-SpringBoot
+          clone-on-start: true
+#  config:
+#    import:  "optional:configserver:http://localhost:9094/"
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9999/eureka
